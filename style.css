@@ -26,6 +26,101 @@ body::before {
     z-index: -1;
 }
 
+/* === OVERLAY API KEY === */
+.api-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.api-box {
+    background: linear-gradient(180deg, #0d0d0d 0%, #1a0a1f 100%);
+    border: 1.5px solid #ff1a75;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(255, 26, 117, 0.4);
+}
+
+.api-box h2 {
+    color: #ff1a75;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.api-box p {
+    color: #ccc;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.api-hint {
+    font-size: 0.8em !important;
+}
+
+.api-hint a {
+    color: #ff4081;
+    text-decoration: underline;
+}
+
+.api-box input {
+    width: 100%;
+    padding: 14px;
+    background: #1a1a1a;
+    border: 1px solid #ff1a75;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 0.9em;
+    margin: 15px 0;
+    outline: none;
+    text-align: center;
+}
+
+.api-box input:focus {
+    box-shadow: 0 0 15px rgba(255, 26, 117, 0.4);
+}
+
+.api-box button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff1a75, #cc0052);
+    border: none;
+    border-radius: 25px;
+    color: #000;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.api-box button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 26, 117, 0.6);
+}
+
+.api-error {
+    color: #ff4444 !important;
+    margin-top: 10px;
+    font-size: 0.85em !important;
+    min-height: 20px;
+}
+
+.api-info {
+    color: #666 !important;
+    font-size: 0.7em !important;
+    margin-top: 15px;
+}
+
+/* === CHAT CONTAINER === */
 .chat-container {
     width: 95%;
     max-width: 650px;
@@ -37,8 +132,7 @@ body::before {
     flex-direction: column;
     box-shadow: 
         0 0 30px rgba(255, 26, 117, 0.4),
-        0 0 60px rgba(255, 26, 117, 0.1),
-        inset 0 0 20px rgba(0,0,0,0.5);
+        0 0 60px rgba(255, 26, 117, 0.1);
     overflow: hidden;
 }
 
@@ -53,7 +147,7 @@ body::before {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    position: relative;
 }
 
 .status-dot {
@@ -71,6 +165,28 @@ body::before {
     50% { opacity: 0.5; transform: scale(1.3); }
 }
 
+.settings-btn {
+    position: absolute;
+    right: 15px;
+    background: rgba(0,0,0,0.3);
+    border: none;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.settings-btn:hover {
+    background: rgba(0,0,0,0.6);
+    transform: rotate(90deg);
+}
+
 .chat-box {
     flex: 1;
     padding: 20px;
@@ -78,20 +194,21 @@ body::before {
     color: #e0e0e0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .chat-box::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
 }
 .chat-box::-webkit-scrollbar-track {
-    background: #0a0a0a;
+    background: transparent;
 }
 .chat-box::-webkit-scrollbar-thumb {
     background: #ff1a75;
     border-radius: 3px;
 }
 
+/* === MESSAGE BUBBLES === */
 .message {
     max-width: 85%;
     padding: 12px 18px;
@@ -99,11 +216,17 @@ body::before {
     line-height: 1.6;
     word-wrap: break-word;
     animation: fadeIn 0.3s ease;
+    position: relative;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
 }
 
 .message.user {
@@ -123,86 +246,7 @@ body::before {
     box-shadow: 0 2px 10px rgba(102, 0, 204, 0.3);
 }
 
-.input-area {
-    display: flex;
-    padding: 15px;
-    background: #0a0a0a;
-    border-top: 1px solid #ff1a75;
-    gap: 10px;
-}
-
-input {
-    flex: 1;
-    padding: 14px 20px;
-    background: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 25px;
-    color: #fff;
-    outline: none;
-    font-size: 0.95em;
-    transition: all 0.3s ease;
-}
-
-input:focus {
-    border-color: #ff1a75;
-    box-shadow: 0 0 15px rgba(255, 26, 117, 0.3);
-    background: #111;
-}
-
-input::placeholder {
-    color: #666;
-    font-style: italic;
-}
-
-button {
-    background: linear-gradient(135deg, #ff1a75, #cc0052);
-    border: none;
-    padding: 14px 25px;
-    border-radius: 25px;
-    font-weight: bold;
-    color: #000;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.95em;
-    white-space: nowrap;
-}
-
-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 26, 117, 0.6);
-    background: linear-gradient(135deg, #ff3388, #ff0066);
-}
-
-button:active {
-    transform: scale(0.95);
-}
-
-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: none;
-}
-
-.footer-info {
-    text-align: center;
-    padding: 8px;
-    font-size: 0.7em;
-    color: #555;
-    background: #050505;
-    border-top: 1px solid #1a1a1a;
-}
-
-.error-message {
-    color: #ff4444;
-    font-style: italic;
-    font-size: 0.9em;
-}
-
 /* === TOMBOL EDIT & HAPUS === */
-.message {
-    position: relative;
-}
-
 .msg-actions {
     position: absolute;
     top: -10px;
@@ -245,20 +289,65 @@ button:disabled {
     box-shadow: 0 0 10px rgba(244,67,54,0.5);
 }
 
-/* === ANIMASI HAPUS === */
-@keyframes fadeOut {
-    from { opacity: 1; transform: translateY(0); }
-    to { opacity: 0; transform: translateY(-10px); }
+/* === INPUT AREA === */
+.input-area {
+    display: flex;
+    padding: 15px;
+    background: #0a0a0a;
+    border-top: 1px solid #ff1a75;
+    gap: 10px;
 }
 
-/* === SCROLLBAR (tambahan) === */
-.chat-box::-webkit-scrollbar {
-    width: 5px;
+.input-area input {
+    flex: 1;
+    padding: 14px 20px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 25px;
+    color: #fff;
+    outline: none;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
 }
-.chat-box::-webkit-scrollbar-track {
-    background: transparent;
+
+.input-area input:focus {
+    border-color: #ff1a75;
+    box-shadow: 0 0 15px rgba(255, 26, 117, 0.3);
 }
-.chat-box::-webkit-scrollbar-thumb {
-    background: #ff1a75;
-    border-radius: 3px;
+
+.input-area input::placeholder {
+    color: #666;
+    font-style: italic;
 }
+
+.input-area button {
+    background: linear-gradient(135deg, #ff1a75, #cc0052);
+    border: none;
+    padding: 14px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+
+.input-area button:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 26, 117, 0.6);
+}
+
+.input-area button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.footer-info {
+    text-align: center;
+    padding: 8px;
+    font-size: 0.7em;
+    color: #555;
+    background: #050505;
+    border-top: 1px solid #1a1a1a;
+    }
