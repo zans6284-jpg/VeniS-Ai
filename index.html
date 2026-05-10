@@ -3,28 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Venisex💓</title>
+    <title> 💓Venisex💓</title>
+    <link rel="icon" href="https://www.google.com/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     
     <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js">
-    </script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js">
-    </script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js">
-    </script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
 
     <!-- OVERLAY LOGIN -->
     <div class="login-overlay" id="login-overlay">
         <div class="login-box">
-            <h2>⚡ Venisex</h2>
-            <p>Login dengan Google </p>
+            <h2>⚡ Venisex💓</h2>
+            <p>Login dengan Google</p>
             <button id="google-login-btn">
-                <img src="https://www.google.com/favicon.ico" alt="G"> Login dengan Google
+                <img src="https://www.google.com/favicon.ico" alt="G" width="20" height="20"> Login dengan Google
             </button>
-            <p class="login-info">Percakapanmu akan tersimpan aman di cloud</p>
+            <p class="login-info" id="login-status">Percakapanmu akan tersimpan aman di cloud</p>
         </div>
     </div>
 
@@ -45,7 +43,7 @@
         <!-- SIDEBAR -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <img id="user-avatar" class="user-avatar" src="" alt="Avatar">
+                <img id="user-avatar" class="user-avatar" src="https://www.google.com/favicon.ico" alt="Avatar">
                 <span id="user-name">User</span>
                 <button id="logout-btn" title="Logout">🚪</button>
             </div>
@@ -65,10 +63,10 @@
             </div>
             <div class="chat-box" id="chat-box"></div>
             <div class="input-area">
-                <input type="text" id="user-input" placeholder=" Ketik hasratmu..." autocomplete="off" disabled>
+                <input type="text" id="user-input" placeholder=" Sampaikan hasratmu..." autocomplete="off" disabled>
                 <button id="send-btn" disabled>🔥 Kirim</button>
             </div>
-            <div class="footer-info">⚡ Venisex 18+ Ai</div>
+            <div class="footer-info">⚡ Venisex💓 Ai-obrolan18+</div>
         </div>
     </div>
 
