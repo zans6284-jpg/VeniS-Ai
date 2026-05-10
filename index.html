@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 VeniSex Ai💓 </title>
-    <link rel="icon" href="https://www.google.com/favicon.ico" type="image/x-icon">
+    <title>💓 Venisex AI</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💓</text></svg>">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,13 +12,13 @@
     <!-- OVERLAY API KEY -->
     <div class="api-overlay" id="api-overlay">
         <div class="api-box">
-            <h2>⚡ Quantum Omega</h2>
-            <p>Masukkan <strong>Gemini API Key</strong></p>
+            <h2>💓 Venisex AI</h2>
+            <p>Masukkan <strong>Gemini API Key</strong> untuk mengaktifkan</p>
             <p class="api-hint">Dapatkan di <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com/apikey</a></p>
             <input type="password" id="api-key-input" placeholder="AIzaSy..." autocomplete="off">
-            <button id="api-save-btn">🔥 Aktifkan</button>
+            <button id="api-save-btn">🔥 Aktifkan Venisex</button>
             <p class="api-error" id="api-error"></p>
-            <p class="api-info"> • Multi Percakapan • Generate NSFW</p>
+            <p class="api-info">API key disimpan aman di browser kamu</p>
         </div>
     </div>
 
@@ -27,9 +27,11 @@
         <!-- SIDEBAR -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <span>⚡ VeniSex💓</span>
+                <span style="font-size:1.5em;">💓</span>
+                <span style="font-weight:bold;color:#ff1a75;">Venisex AI</span>
             </div>
             <button class="new-chat-btn" id="new-chat-btn">+ Percakapan Baru</button>
+            <button class="new-chat-btn" id="generate-image-btn" style="background:linear-gradient(135deg,#ff0080,#ff4081);margin-top:5px;">🖼️ Generate Foto 18+</button>
             <div class="chat-tabs" id="chat-tabs"></div>
             <div class="sidebar-footer">
                 <button id="settings-btn-sidebar" title="Ganti API Key">⚙️ API Key</button>
@@ -39,41 +41,36 @@
         <!-- CHAT AREA -->
         <div class="chat-container">
             <div class="chat-header">
-                <span id="chat-title">🔥 VeniSex Ai💓— NSFW Mode</span>
+                <span id="chat-title">💓 Venisex AI</span>
                 <span class="status-dot" id="status-dot"></span>
                 <button class="rename-btn" id="rename-btn" title="Rename">✏️</button>
-                <button class="image-btn" id="image-btn" title="Generate Gambar">🖼️</button>
             </div>
             <div class="chat-box" id="chat-box"></div>
             
             <!-- IMAGE GENERATION PANEL -->
             <div class="image-panel" id="image-panel" style="display:none;">
                 <div class="image-panel-header">
-                    <span>🖼️ Generate Gambar NSFW</span>
+                    <span>🖼️ Generate Foto 18+</span>
                     <button id="close-image-panel">✕</button>
                 </div>
-                <div class="image-panel-body">
-                    <label>Prompt (deskripsikan gambar):</label>
-                    <textarea id="image-prompt" placeholder="Contoh: a beautiful naked woman, big breasts, explicit, nsfw, creampie..." rows="3"></textarea>
-                    <label>Negative Prompt (opsional):</label>
-                    <input type="text" id="image-negative" placeholder="blurry, ugly, deformed...">
-                    <label>Model:</label>
-                    <select id="image-model">
-                        <option value="epicrealism_nsfw">EpicRealism NSFW</option>
-                        <option value="realistic_vision_nsfw">Realistic Vision NSFW</option>
-                        <option value="hentai_diffusion">Hentai Diffusion</option>
-                        <option value="pony_realism">Pony Realism</option>
+                <div class="image-prompt-area">
+                    <textarea id="image-prompt" placeholder="Deskripsikan foto yang kamu inginkan...&#10;Contoh: a sensual woman, nsfw, explicit, creampie, realistic photo style" rows="3"></textarea>
+                    <select id="image-style">
+                        <option value="realistic">Realistic Photo</option>
+                        <option value="anime">Anime / Hentai</option>
+                        <option value="3d">3D Render</option>
+                        <option value="oil-painting">Oil Painting</option>
                     </select>
-                    <button id="generate-image-btn">🔥 Generate Gambar</button>
-                    <div id="image-result" class="image-result"></div>
+                    <button id="generate-image-submit">🔥 Generate</button>
                 </div>
+                <div class="image-result" id="image-result"></div>
             </div>
             
             <div class="input-area">
-                <input type="text" id="user-input" placeholder=" Wujudkan hasratmu...💓" autocomplete="off" disabled>
+                <input type="text" id="user-input" placeholder="😈 Ketik hasratmu..." autocomplete="off" disabled>
                 <button id="send-btn" disabled>🔥 Kirim</button>
             </div>
-            <div class="footer-info">⚡ VeniSex💓 Ai 18+</div>
+            <div class="footer-info">💓 Venisex AI — By Deepseek-Reza</div>
         </div>
     </div>
 
