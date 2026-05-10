@@ -3,33 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 Venisex Ai 💓</title>
+    <title>🔥 Vanisex Ai 💓 </title>
     <link rel="icon" href="https://www.google.com/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- OVERLAY LOGIN SIMPLE -->
-    <div class="login-overlay" id="login-overlay">
-        <div class="login-box">
-            <h2>⚡ Venisex Ai 💓</h2>
-            <p>Siapa nama panggilan Anda?</p>
-            <input type="text" id="username-input" placeholder="Masukkan Nama..." autocomplete="off">
-            <button id="enter-btn">🔥 Masuk</button>
-            <p class="login-info">Nama hanya disimpan di browser kamu</p>
-        </div>
-    </div>
-
     <!-- OVERLAY API KEY -->
-    <div class="api-overlay" id="api-overlay" style="display:none;">
+    <div class="api-overlay" id="api-overlay">
         <div class="api-box">
-            <h2>⚡ API Keys</h2>
-            <p><strong>Gemini API Key</strong> (Untuk Chat)</p>
+            <h2>⚡ VaniSex Ai 💓</h2>
+            <p>Masukkan <strong>Gemini API Key</strong></p>
+            <p class="api-hint">Dapatkan di <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com/apikey</a></p>
             <input type="password" id="api-key-input" placeholder="AIzaSy..." autocomplete="off">
-            <p style="margin-top:15px;"><strong>ModelsLab API Key</strong> (Untuk Generate Gambar NSFW)</p>
-            <input type="password" id="modelslab-key-input" placeholder="Masukkan ModelsLab API Key..." autocomplete="off">
-            <p class="api-hint">Dapatkan di <a href="https://modelslab.com" target="_blank">modelslab.com</a> (gratis)</p>
-            <button id="api-save-btn">🔥 Aktifkan Semua</button>
+            <button id="api-save-btn">🔥 Aktifkan Vanisex Ai</button>
+            <p class="api-hint" style="margin-top:10px;">contoh: <strong>AIzaSy******</strong></p>
+            <button id="use-default-key" style="background:#333;color:#fff;border:1px solid #555;padding:10px 20px;border-radius:25px;cursor:pointer;margin-top:5px;font-size:0.8em;">⚡ Gunakan Key Default</button>
             <p class="api-error" id="api-error"></p>
         </div>
     </div>
@@ -39,38 +28,47 @@
         <!-- SIDEBAR -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <span id="user-name">User</span>
-                <button id="logout-btn" title="Ganti User">🚪</button>
+                <span>🔥 Quantum Omega</span>
+                <button id="settings-btn-header" title="Ganti API Key">⚙️</button>
             </div>
             <button class="new-chat-btn" id="new-chat-btn">+ Percakapan Baru</button>
+            <button class="new-chat-btn" id="generate-image-btn" style="background:linear-gradient(135deg, #ff1a75, #6600cc);">🖼️ Generate Foto NSFW</button>
             <div class="chat-tabs" id="chat-tabs"></div>
             <div class="sidebar-footer">
-                <button id="settings-btn-sidebar" title="Ganti API Key">⚙️ API Key</button>
+                <span style="font-size:0.7em;color:#666;">Mode: Uncensored Full</span>
             </div>
         </div>
 
         <!-- CHAT AREA -->
         <div class="chat-container">
             <div class="chat-header">
-                <span id="chat-title">🔥 Venisex</span>
+                <span id="chat-title">🔥 Quantum Omega</span>
                 <span class="status-dot" id="status-dot"></span>
                 <button class="rename-btn" id="rename-btn" title="Rename">✏️</button>
             </div>
             <div class="chat-box" id="chat-box"></div>
             
-            <!-- Image Generation Toggle -->
-            <div id="image-gen-panel" style="display:none; padding: 10px; background: #111; border-top: 1px solid #ff1a75;">
-                <input type="text" id="image-prompt" placeholder="🎨 Ketik prompt gambar NSFW..." style="width:100%; margin-bottom:5px;">
-                <button id="generate-image-btn" style="background:#ff1a75; color:#000; padding:8px; border:none; border-radius:5px; width:100%;">🖼️ Generate Gambar</button>
-                <div id="image-result" style="margin-top:10px;"></div>
+            <!-- IMAGE GENERATION AREA -->
+            <div class="image-gen-area" id="image-gen-area" style="display:none;">
+                <div class="image-gen-header">
+                    <span>🖼️ Generate Foto NSFW</span>
+                    <button id="close-image-gen">✕</button>
+                </div>
+                <input type="text" id="image-prompt" placeholder="Deskripsikan foto yang kamu inginkan... (contoh: naked girl, big boobs, creampie, etc)" autocomplete="off">
+                <select id="image-style">
+                    <option value="realistic">📸 Realistik</option>
+                    <option value="anime">🎌 Anime/Hentai</option>
+                    <option value="artistic">🎨 Artistic Nude</option>
+                </select>
+                <button id="generate-image-btn-2">🔥 Generate Gambar</button>
+                <div class="image-result" id="image-result"></div>
             </div>
             
             <div class="input-area">
-                <input type="text" id="user-input" placeholder=" Kirim hasratmu..." autocomplete="off" disabled>
-                <button id="image-toggle-btn" title="Buka Generate Gambar">🎨</button>
+                <input type="text" id="user-input" placeholder=" Wujudkan hasratmu..." autocomplete="off" disabled>
                 <button id="send-btn" disabled>🔥 Kirim</button>
             </div>
-            <div class="footer-info">⚡ VeniSex.Ai-18+ Ai</div>
+            <div class="footer-info">⚡ VeniSex Ai 18+</div>
         </div>
     </div>
 
