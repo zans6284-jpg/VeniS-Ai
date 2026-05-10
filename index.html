@@ -2,16 +2,20 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>💓 Venisex AI</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💓</text></svg>">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- BACKGROUND SUCCUBUS LOGO -->
+    <div class="bg-logo" id="bg-logo">👿</div>
+
     <!-- OVERLAY API KEY -->
     <div class="api-overlay" id="api-overlay">
         <div class="api-box">
+            <div class="api-logo">👿</div>
             <h2>💓 Venisex AI</h2>
             <p>Masukkan <strong>Gemini API Key</strong> untuk mengaktifkan</p>
             <p class="api-hint">Dapatkan di <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com/apikey</a></p>
@@ -27,11 +31,12 @@
         <!-- SIDEBAR -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <span style="font-size:1.5em;">💓</span>
-                <span style="font-weight:bold;color:#ff1a75;">Venisex AI</span>
+                <span class="sidebar-logo">👿</span>
+                <span class="sidebar-title">Venisex AI</span>
+                <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
             </div>
             <button class="new-chat-btn" id="new-chat-btn">+ Percakapan Baru</button>
-            <button class="new-chat-btn" id="generate-image-btn" style="background:linear-gradient(135deg,#ff0080,#ff4081);margin-top:5px;">🖼️ Generate Foto 18+</button>
+            <button class="new-chat-btn img-btn" id="generate-image-btn">🖼️ Generate Foto</button>
             <div class="chat-tabs" id="chat-tabs"></div>
             <div class="sidebar-footer">
                 <button id="settings-btn-sidebar" title="Ganti API Key">⚙️ API Key</button>
@@ -41,6 +46,7 @@
         <!-- CHAT AREA -->
         <div class="chat-container">
             <div class="chat-header">
+                <span class="header-logo">👿</span>
                 <span id="chat-title">💓 Venisex AI</span>
                 <span class="status-dot" id="status-dot"></span>
                 <button class="rename-btn" id="rename-btn" title="Rename">✏️</button>
@@ -54,19 +60,28 @@
                     <button id="close-image-panel">✕</button>
                 </div>
                 <div class="image-prompt-area">
-                    <textarea id="image-prompt" placeholder="Deskripsikan foto yang kamu inginkan...&#10;Contoh: a sensual woman, nsfw, explicit, creampie, realistic photo style" rows="3"></textarea>
-                    <select id="image-style">
-                        <option value="realistic">Realistic Photo</option>
-                        <option value="anime">Anime / Hentai</option>
-                        <option value="3d">3D Render</option>
-                        <option value="oil-painting">Oil Painting</option>
-                    </select>
+                    <textarea id="image-prompt" placeholder="Deskripsikan foto yang kamu inginkan...&#10;Contoh: a sensual woman, nsfw, creampie, realistic" rows="2"></textarea>
+                    <div class="image-options">
+                        <select id="image-style">
+                            <option value="realistic">📸 Realistic Photo</option>
+                            <option value="anime">🎌 Anime / Hentai</option>
+                            <option value="3d">🎮 3D Render</option>
+                            <option value="oil-painting">🎨 Oil Painting</option>
+                            <option value="fantasy">🧝 Fantasy Art</option>
+                        </select>
+                        <select id="image-size">
+                            <option value="512">512px</option>
+                            <option value="768" selected>768px</option>
+                            <option value="1024">1024px</option>
+                        </select>
+                    </div>
                     <button id="generate-image-submit">🔥 Generate</button>
                 </div>
                 <div class="image-result" id="image-result"></div>
             </div>
             
-            <div class="input-area">
+            <!-- INPUT AREA — FIXED -->
+            <div class="input-area" id="input-area">
                 <input type="text" id="user-input" placeholder="😈 Ketik hasratmu..." autocomplete="off" disabled>
                 <button id="send-btn" disabled>🔥 Kirim</button>
             </div>
