@@ -197,3 +197,68 @@ button:disabled {
     font-style: italic;
     font-size: 0.9em;
 }
+
+/* === TOMBOL EDIT & HAPUS === */
+.message {
+    position: relative;
+}
+
+.msg-actions {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.message:hover .msg-actions {
+    opacity: 1;
+}
+
+.msg-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    padding: 0;
+    background: rgba(0,0,0,0.7);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.edit-btn:hover {
+    background: #4CAF50;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(76,175,80,0.5);
+}
+
+.del-btn:hover {
+    background: #f44336;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(244,67,54,0.5);
+}
+
+/* === ANIMASI HAPUS === */
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+}
+
+/* === SCROLLBAR (tambahan) === */
+.chat-box::-webkit-scrollbar {
+    width: 5px;
+}
+.chat-box::-webkit-scrollbar-track {
+    background: transparent;
+}
+.chat-box::-webkit-scrollbar-thumb {
+    background: #ff1a75;
+    border-radius: 3px;
+}
